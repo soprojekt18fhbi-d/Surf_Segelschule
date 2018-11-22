@@ -10,6 +10,7 @@ import javax.swing.JButton;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
 import java.awt.event.ActionEvent;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.FlowLayout;
@@ -85,6 +86,24 @@ public class KundeRegistrierenGUI extends JFrame {
 		});
 		
 		JButton btnHauptmenue = new JButton("Hauptmenü");
+		btnHauptmenue.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+		
+							Hauptmenue frame = new Hauptmenue();
+							frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+			// Fenster muss noch geschlossen werden 
+			}
+		});	
+		
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
