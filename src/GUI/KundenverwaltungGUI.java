@@ -12,6 +12,7 @@ import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class KundenverwaltungGUI extends JFrame {
 
@@ -38,7 +39,7 @@ public class KundenverwaltungGUI extends JFrame {
 	 */
 	public KundenverwaltungGUI() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 1000, 600);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -56,24 +57,26 @@ public class KundenverwaltungGUI extends JFrame {
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(119)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(btnZurck)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(45)
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-								.addComponent(btnKundeAendern, GroupLayout.PREFERRED_SIZE, 330, GroupLayout.PREFERRED_SIZE)
-								.addComponent(btnKundeRegistrieren, GroupLayout.PREFERRED_SIZE, 330, GroupLayout.PREFERRED_SIZE))))
-					.addContainerGap(49, Short.MAX_VALUE))
+						.addComponent(btnKundeRegistrieren, GroupLayout.PREFERRED_SIZE, 665, GroupLayout.PREFERRED_SIZE)
+						.addComponent(btnKundeAendern, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+					.addContainerGap(190, GroupLayout.PREFERRED_SIZE))
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(20)
+					.addComponent(btnZurck, GroupLayout.PREFERRED_SIZE, 113, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(841, Short.MAX_VALUE))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
-					.addComponent(btnZurck)
-					.addGap(18)
-					.addComponent(btnKundeRegistrieren, GroupLayout.PREFERRED_SIZE, 81, GroupLayout.PREFERRED_SIZE)
-					.addGap(18)
-					.addComponent(btnKundeAendern, GroupLayout.PREFERRED_SIZE, 81, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(30, Short.MAX_VALUE))
+					.addContainerGap()
+					.addComponent(btnZurck, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+					.addGap(60)
+					.addComponent(btnKundeRegistrieren, GroupLayout.PREFERRED_SIZE, 159, GroupLayout.PREFERRED_SIZE)
+					.addGap(50)
+					.addComponent(btnKundeAendern, GroupLayout.PREFERRED_SIZE, 161, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(70, Short.MAX_VALUE))
 		);
 		contentPane.setLayout(gl_contentPane);
 	}
