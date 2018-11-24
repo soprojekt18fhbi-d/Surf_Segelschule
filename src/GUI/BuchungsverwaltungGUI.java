@@ -137,7 +137,7 @@ public class BuchungsverwaltungGUI extends JFrame {
 			}
 		});
 		
-		
 		setVisible(true);
+	
 	}
 }

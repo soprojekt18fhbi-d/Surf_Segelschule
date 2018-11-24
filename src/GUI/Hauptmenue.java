@@ -63,7 +63,7 @@ public class Hauptmenue extends JFrame {
 					public void run() {
 						try {
 							KundenverwaltungGUI frame = new KundenverwaltungGUI();
-							frame.setVisible(true);
+							
 						} catch (Exception e) {
 							e.printStackTrace();
 						}
@@ -123,5 +123,18 @@ public class Hauptmenue extends JFrame {
 					.addGap(8))
 		);
 		contentPane.setLayout(gl_contentPane);
+		
+		
+		
+		btnBuchungsverwaltung.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				BuchungsverwaltungGUI frame = new BuchungsverwaltungGUI();
+				dispose();
+			}
+		});
+		
+		
+		
+		setVisible(true);
 	}
 }
