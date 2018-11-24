@@ -97,7 +97,7 @@ public class MainFrame extends JFrame {
 		JPanel Typhinzufuegen = new JPanel();
 		JPanel Modellhinzufuegen = new JPanel();
 		JPanel Modellaendern = new JPanel();
-		JPanel WVerwaltung = new WVerwaltung();
+		
 		
 		JLabel label = new JLabel("Bitte Standort w\u00E4hlen:");
 		label.setHorizontalAlignment(SwingConstants.CENTER);
@@ -789,9 +789,7 @@ public class MainFrame extends JFrame {
 		button_16.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				contentPane.add(WVerwaltung);
-				WVerwaltung.setVisible(true);
-				Hauptmenue.setVisible(false);
+				
 				
 			}
 		});
