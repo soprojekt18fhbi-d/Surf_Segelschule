@@ -39,21 +39,20 @@ public class KundeRegistrierenGUI extends JFrame {
 	private JTextField textField_10;
 	private JTextField textField_11;
 
-	/**
-	 * Launch the application.
-	 */
-//	public static void main(String[] args) {
-//		EventQueue.invokeLater(new Runnable() {
-//		public void run() {
-//				try {
-//					KundeRegistrierenGUI frame = new KundeRegistrierenGUI();
-//					frame.setVisible(true);
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
+	
+	 	
+	 	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+		public void run() {
+				try {
+					KundeRegistrierenGUI frame = new KundeRegistrierenGUI();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
 
 	/**
 	 * Create the frame.
