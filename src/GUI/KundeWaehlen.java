@@ -2,8 +2,6 @@ package GUI;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
-import java.awt.EventQueue;
-import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -14,18 +12,15 @@ import java.awt.event.ActionListener;
 import javax.swing.GroupLayout;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.GroupLayout.Alignment;
-import javax.swing.border.EmptyBorder;
 import javax.swing.LayoutStyle.ComponentPlacement;
-import javax.swing.JList;
 
-public class KundeWaehlenGUI extends JFrame {
-
-	private JPanel contentPane;
+public class KundeWaehlen extends JPanel {
+	
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
@@ -34,30 +29,15 @@ public class KundeWaehlenGUI extends JFrame {
 	private JTextField textField_5;
 	private JTextField textField_6;
 
-
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					KundeWaehlenGUI frame = new KundeWaehlenGUI();
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	public KundeWaehlenGUI() {
-		setTitle("Kunde auswählen");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 600, 700);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new BorderLayout(0, 0));
-		setContentPane(contentPane);
-		
+	/**
+	 * Create the panel.
+	 */
+	public KundeWaehlen() {
+		setLayout(new BorderLayout(0, 0));
 		JPanel panel = new JPanel();
-		contentPane.add(panel, BorderLayout.NORTH);
+		add(panel, BorderLayout.NORTH);
+		
+		
 		JButton btnZurueck = new JButton("Zurück");
 		btnZurueck.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		
@@ -66,31 +46,30 @@ public class KundeWaehlenGUI extends JFrame {
 		
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
-			gl_panel.createParallelGroup(Alignment.TRAILING)
-				.addGroup(Alignment.LEADING, gl_panel.createSequentialGroup()
+			gl_panel.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel.createSequentialGroup()
 					.addComponent(btnZurueck, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED, 687, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.RELATED, 177, Short.MAX_VALUE)
 					.addComponent(btnHauptmen))
 		);
 		gl_panel.setVerticalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel.createSequentialGroup()
-					.addContainerGap()
 					.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
 						.addComponent(btnZurueck, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)
 						.addComponent(btnHauptmen))
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+					.addContainerGap(13, Short.MAX_VALUE))
 		);
 		panel.setLayout(gl_panel);
 		
 		
 		JPanel panel2 = new JPanel();
-		getContentPane().add(panel2, BorderLayout.CENTER);
+		add(panel2, BorderLayout.CENTER);
 		GridBagLayout gbl_panel = new GridBagLayout();
 		gbl_panel.columnWidths = new int[]{0, 0, 0};
 		gbl_panel.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 		gbl_panel.columnWeights = new double[]{0.0, 0.0, 0.0};
-		gbl_panel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gbl_panel.rowWeights = new double[]{1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, Double.MIN_VALUE};
 		panel2.setLayout(gbl_panel);
 		
 		JLabel lblKundennummer = new JLabel("Kundennummer:");
@@ -104,8 +83,7 @@ public class KundeWaehlenGUI extends JFrame {
 		panel2.add(lblKundennummer, gbc_lblKundennummer);
 		
 		textField = new JTextField();
-		textField.setMinimumSize(new Dimension(100, 25));
-		textField.setPreferredSize(new Dimension(100, 25));
+		textField.setPreferredSize(new Dimension(6, 25));
 		GridBagConstraints gbc_textField = new GridBagConstraints();
 		gbc_textField.gridwidth = 2;
 		gbc_textField.insets = new Insets(0, 0, 5, 5);
@@ -248,7 +226,7 @@ public class KundeWaehlenGUI extends JFrame {
 		textField_6.setPreferredSize(new Dimension(6, 25));
 		GridBagConstraints gbc_textField_6 = new GridBagConstraints();
 		gbc_textField_6.gridwidth = 2;
-		gbc_textField_6.insets = new Insets(0, 0, 5, 0);
+		gbc_textField_6.insets = new Insets(0, 0, 5, 5);
 		gbc_textField_6.fill = GridBagConstraints.HORIZONTAL;
 		gbc_textField_6.gridx = 1;
 		gbc_textField_6.gridy = 7;
@@ -276,7 +254,7 @@ public class KundeWaehlenGUI extends JFrame {
 		panel2.add(btnSuchen, gbc_btnSuchen);
 		
 		JPanel panel3 = new JPanel();
-		contentPane.add(panel3, BorderLayout.SOUTH);
+		add(panel3, BorderLayout.SOUTH);
 		GridBagLayout gbl_panel3 = new GridBagLayout();
 		gbl_panel3.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 		gbl_panel3.rowHeights = new int[]{0, 0, 0};
@@ -323,15 +301,13 @@ public class KundeWaehlenGUI extends JFrame {
 		//Funktionen der Button
 		btnZurueck.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				BuchungsverwaltungGUI frame = new BuchungsverwaltungGUI();
-				dispose();
+				MainFrame.change(MainFrame.getKundeWaehlen(), MainFrame.getBuchungsverwaltung());
 			}
 		});
 
 		btnHauptmen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Hauptmenue frame = new Hauptmenue();
-				dispose();
+				MainFrame.change(MainFrame.getKundeWaehlen(), MainFrame.getHauptmenue());
 			}
 		});
 		
@@ -359,15 +335,11 @@ public class KundeWaehlenGUI extends JFrame {
 		
 		btnAuswhlen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				GeräteTypenGUI frame = new GeräteTypenGUI();
-				setVisible(false);
+				MainFrame.change(MainFrame.getKundeWaehlen(), MainFrame.getBuchungsTypAuswahl());
 			}
 		});
 		
-		
-		
-		setVisible(true);
-			
+
 	}
 
 }

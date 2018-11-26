@@ -1,73 +1,50 @@
 package GUI;
 
 import java.awt.BorderLayout;
-import java.awt.EventQueue;
 import java.awt.Font;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
-import java.awt.GridBagLayout;
-import javax.swing.JButton;
 import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class BuchungsverwaltungGUI extends JFrame {
+import javax.swing.GroupLayout;
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.border.EmptyBorder;
 
-	private JPanel contentPane;
+public class Buchungsverwaltung extends JPanel {
 
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					BuchungsverwaltungGUI frame = new BuchungsverwaltungGUI();
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	public BuchungsverwaltungGUI() {
-		setTitle("Buchungsverwaltung");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1000, 600);
-		setTitle("Buchungsverwaltung");
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new BorderLayout(0, 0));
-		setContentPane(contentPane);
+	/**
+	 * Create the panel.
+	 */
+	public Buchungsverwaltung() {
+		
+		setLayout(new BorderLayout(0, 0));
 		
 		JPanel panel = new JPanel();
-		contentPane.add(panel, BorderLayout.NORTH);
+		add(panel, BorderLayout.NORTH);
 		
-		JButton btnZurueck = new JButton("Zurück");
-		btnZurueck.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		
-		
+		JButton btnZurck = new JButton("Zur\u00FCck");
+		btnZurck.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(btnZurueck, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(824, Short.MAX_VALUE))
+					.addComponent(btnZurck, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(300, Short.MAX_VALUE))
 		);
 		gl_panel.setVerticalGroup(
-			gl_panel.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(btnZurueck, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)
+			gl_panel.createParallelGroup(Alignment.TRAILING)
+				.addGroup(Alignment.LEADING, gl_panel.createSequentialGroup()
+					.addComponent(btnZurck, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 		);
 		panel.setLayout(gl_panel);
 		
 		JPanel panel_1 = new JPanel();
-		contentPane.add(panel_1, BorderLayout.CENTER);
+		add(panel_1, BorderLayout.CENTER);
 		GridBagLayout gbl_panel_1 = new GridBagLayout();
 		gbl_panel_1.columnWidths = new int[]{0, 0};
 		gbl_panel_1.rowHeights = new int[]{0, 0, 0, 0};
@@ -100,20 +77,16 @@ public class BuchungsverwaltungGUI extends JFrame {
 		gbc_btnAbgeschlosseneBuchungen.gridx = 0;
 		gbc_btnAbgeschlosseneBuchungen.gridy = 2;
 		panel_1.add(btnAbgeschlosseneBuchungen, gbc_btnAbgeschlosseneBuchungen);
+
+
 		
-		//Funktionen der Button
-		btnZurueck.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		
+
 
 		
 		//Funktionen der Button
-		btnZurueck.addActionListener(new ActionListener() {
+		btnZurck.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Hauptmenue frame = new Hauptmenue();
-				dispose();
+				MainFrame.change(MainFrame.getBuchungsverwaltung(), MainFrame.getHauptmenue());
 			}
 		});
 		
@@ -124,11 +97,7 @@ public class BuchungsverwaltungGUI extends JFrame {
 
 		btnSportgertVerkaufenverleihen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				KundeWaehlenGUI frame = new KundeWaehlenGUI();
-				
-				//setVisible(false) = Fenster im Hintergrund geöffnet lassen!!
-				//dispose() = Fenster schließen!!
-				dispose();
+				MainFrame.change(MainFrame.getBuchungsverwaltung(), MainFrame.getKundeWaehlen());
 			}
 		});
 		
@@ -136,8 +105,7 @@ public class BuchungsverwaltungGUI extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		
-		setVisible(true);
-	
+
 	}
+
 }

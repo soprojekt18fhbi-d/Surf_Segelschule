@@ -1,60 +1,30 @@
 package GUI;
 
 import java.awt.BorderLayout;
-import java.awt.EventQueue;
 import java.awt.Font;
-
-import javax.swing.GroupLayout;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.GroupLayout.Alignment;
-import javax.swing.border.EmptyBorder;
-import java.awt.GridBagLayout;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-
 import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.GroupLayout;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
-public class VerleihenGUI extends JFrame {
-
-	private JPanel contentPane;
+public class VerleihFormular extends JPanel {
 
 	/**
-	 * Launch the application.
+	 * Create the panel.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					VerleihenGUI frame = new VerleihenGUI();
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
-	public VerleihenGUI() {
-		setTitle("Übersicht Verleih-Transaktion");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1000, 600);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new BorderLayout(0, 0));
-		setContentPane(contentPane);
-		
-		
+	public VerleihFormular() {
+		setLayout(new BorderLayout(0, 0));
 		JPanel panel = new JPanel();
-		contentPane.add(panel, BorderLayout.NORTH);
+		add(panel, BorderLayout.NORTH);
 		
 		JButton btnZurck = new JButton("Zur\u00FCck");
 		btnZurck.setFont(new Font("Tahoma", Font.PLAIN, 18));
@@ -62,21 +32,19 @@ public class VerleihenGUI extends JFrame {
 		gl_panel.setHorizontalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel.createSequentialGroup()
-					.addContainerGap()
 					.addComponent(btnZurck, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(824, Short.MAX_VALUE))
+					.addContainerGap(300, Short.MAX_VALUE))
 		);
 		gl_panel.setVerticalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel.createSequentialGroup()
-					.addGap(6)
 					.addComponent(btnZurck, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+					.addContainerGap(17, Short.MAX_VALUE))
 		);
 		panel.setLayout(gl_panel);
 		
 		JPanel panel_1 = new JPanel();
-		contentPane.add(panel_1, BorderLayout.CENTER);
+		add(panel_1, BorderLayout.CENTER);
 		GridBagLayout gbl_panel_1 = new GridBagLayout();
 		gbl_panel_1.columnWidths = new int[]{0, 0, 0, 0, 0};
 		gbl_panel_1.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -289,7 +257,7 @@ public class VerleihenGUI extends JFrame {
 		panel_1.add(lblGetpreis, gbc_lblGetpreis);
 		
 		JPanel panel_2 = new JPanel();
-		contentPane.add(panel_2, BorderLayout.SOUTH);
+		add(panel_2, BorderLayout.SOUTH);
 		
 		JButton btnAbbrechen = new JButton("Abbrechen");
 		btnAbbrechen.setFont(new Font("Tahoma", Font.PLAIN, 18));
@@ -300,20 +268,18 @@ public class VerleihenGUI extends JFrame {
 		gl_panel_2.setHorizontalGroup(
 			gl_panel_2.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_panel_2.createSequentialGroup()
-					.addContainerGap(646, Short.MAX_VALUE)
+					.addContainerGap(140, Short.MAX_VALUE)
 					.addComponent(btnAbbrechen, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE)
-					.addGap(18)
-					.addComponent(btnBesttigen, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap())
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(btnBesttigen, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE))
 		);
 		gl_panel_2.setVerticalGroup(
 			gl_panel_2.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel_2.createSequentialGroup()
-					.addGap(6)
+				.addGroup(Alignment.TRAILING, gl_panel_2.createSequentialGroup()
+					.addContainerGap(17, Short.MAX_VALUE)
 					.addGroup(gl_panel_2.createParallelGroup(Alignment.BASELINE)
 						.addComponent(btnBesttigen, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)
-						.addComponent(btnAbbrechen, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE))
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+						.addComponent(btnAbbrechen, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)))
 		);
 		panel_2.setLayout(gl_panel_2);
 		
@@ -322,27 +288,26 @@ public class VerleihenGUI extends JFrame {
 		//Funktionen der Button
 		btnZurck.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				SportGeräteGUI frame = new SportGeräteGUI();
+				MainFrame.change(MainFrame.getVerleihFormular(), MainFrame.getGerätAuswahlAusleihe());
 			}
 		});
 		
 		btnAbbrechen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				BuchungsverwaltungGUI frame = new BuchungsverwaltungGUI();
-				dispose();
+				MainFrame.change(MainFrame.getVerleihFormular(), MainFrame.getBuchungsverwaltung());
+
+				
 			}
 		});
 		
 		btnBesttigen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showMessageDialog(null, "Die Ausleihe wurde erfasst", "Verleih-Bestätigung", JOptionPane.PLAIN_MESSAGE);
-				Hauptmenue frame = new Hauptmenue();
-				dispose();
+				MainFrame.change(MainFrame.getVerleihFormular(), MainFrame.getHauptmenue());
 			}
 		});
 		
-		
-		setVisible(true);
+
 	}
 
 }

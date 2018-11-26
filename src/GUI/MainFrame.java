@@ -37,6 +37,17 @@ public class MainFrame extends JFrame {
 	private static Typaendern typaendern = new Typaendern();
 	private static Typhinzufuegen typhinzufuegen = new Typhinzufuegen();
 	private static JPanel StandortPanel = new StandortPanel();
+	
+	//Buchungsverwaltung
+	private static Buchungsverwaltung buchungsverwaltung = new Buchungsverwaltung();
+	private static KundeWaehlen kundeWaehlen = new KundeWaehlen();
+	private static BuchungsTypAuswahl buchungsTypAuswahl = new BuchungsTypAuswahl();
+	private static TypAuswahl typAuswahl = new TypAuswahl();
+	private static ModellAuswahl modellAuswahl = new ModellAuswahl();
+	private static GerätAuswahlAusleihe gerätAuswahlAusleihe = new GerätAuswahlAusleihe();
+	private static VerleihFormular verleihFormular = new VerleihFormular();
+
+	
 
 	/**
 	 * Launch the application.
@@ -80,6 +91,13 @@ public class MainFrame extends JFrame {
 		contentPane.add(geraeteTypVerwaltung);
 		contentPane.add(geraeteModellVerwaltung);
 		contentPane.add(geraetaendern);
+		contentPane.add(buchungsverwaltung);
+		contentPane.add(kundeWaehlen);
+		contentPane.add(buchungsTypAuswahl);
+		contentPane.add(typAuswahl);
+		contentPane.add(modellAuswahl);
+		contentPane.add(gerätAuswahlAusleihe);
+		contentPane.add(verleihFormular);
 
 		
 		JLabel label = new JLabel("Bitte Standort w\u00E4hlen:");
@@ -187,5 +205,34 @@ public class MainFrame extends JFrame {
 	public static JPanel getGeraetaendern(){ 		
 		return geraetaendern;
 	}
+	
+	public static JPanel getBuchungsverwaltung(){ 		
+		return buchungsverwaltung;
+	}
+	
+	public static JPanel getKundeWaehlen(){ 		
+		return kundeWaehlen;
+	}
+	
+	public static JPanel getBuchungsTypAuswahl(){ 		
+		return buchungsTypAuswahl;
+	}
+	
+	public static JPanel getTypAuswahl(){ 		
+		return typAuswahl;
+	}
+	
+	public static JPanel getModellAuswahl(){ 		
+		return modellAuswahl;
+	}
+	
+	public static JPanel getGerätAuswahlAusleihe(){ 		
+		return gerätAuswahlAusleihe;
+	}
+	
+	public static JPanel getVerleihFormular(){ 		
+		return verleihFormular;
+	}
+
 	
 }
