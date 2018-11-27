@@ -25,6 +25,11 @@ public class Hauptmenue extends JPanel {
 		
 		JButton button = new JButton("Kundenverwaltung");
 		button.setFont(new Font("Tahoma", Font.PLAIN, 28));
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MainFrame.change(MainFrame.getHauptmenue(), MainFrame.getKundenverwaltung());
+			}
+		});
 		
 		JButton button_1 = new JButton("Ger\u00E4teverwaltung");
 		button_1.addActionListener(new ActionListener() {
@@ -48,6 +53,11 @@ public class Hauptmenue extends JPanel {
 		
 		JButton button_3 = new JButton("W-Verwaltung");
 		button_3.setFont(new Font("Tahoma", Font.PLAIN, 28));
+		button_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MainFrame.change(MainFrame.getHauptmenue(), MainFrame.getWirtschaftlichkeitsverwaltung());
+			}
+		});
 		
 		JButton button_4 = new JButton("Rechnungsverwaltung");
 		button_4.setFont(new Font("Tahoma", Font.PLAIN, 28));

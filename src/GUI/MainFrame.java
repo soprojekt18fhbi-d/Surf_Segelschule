@@ -46,7 +46,13 @@ public class MainFrame extends JFrame {
 	private static ModellAuswahl modellAuswahl = new ModellAuswahl();
 	private static GerätAuswahlAusleihe gerätAuswahlAusleihe = new GerätAuswahlAusleihe();
 	private static VerleihFormular verleihFormular = new VerleihFormular();
-
+	
+	// Kundenverwaltung
+	private static KundenverwaltungGUI kundenverwaltung = new KundenverwaltungGUI(); 
+	private static KundeAendern kundeAendern = new KundeAendern();
+	
+	// Wirtschaftlichkeitsrechnung
+	private static WirtschaftlichkeitsverwaltungGUI wirtschaftlichkeitsverwaltung = new WirtschaftlichkeitsverwaltungGUI();
 	
 
 	/**
@@ -98,6 +104,9 @@ public class MainFrame extends JFrame {
 		contentPane.add(modellAuswahl);
 		contentPane.add(gerätAuswahlAusleihe);
 		contentPane.add(verleihFormular);
+		contentPane.add(kundenverwaltung);
+		contentPane.add(kundeAendern);
+		contentPane.add(wirtschaftlichkeitsverwaltung);
 
 		
 		JLabel label = new JLabel("Bitte Standort w\u00E4hlen:");
@@ -234,5 +243,16 @@ public class MainFrame extends JFrame {
 		return verleihFormular;
 	}
 
+	public static JPanel getKundenverwaltung() {
+		return kundenverwaltung;
+	}
 	
+	public static KundeAendern getKundeAendern() {
+		return kundeAendern;
+	}
+
+
+	public static JPanel getWirtschaftlichkeitsverwaltung() {
+		return wirtschaftlichkeitsverwaltung;
+	}
 }

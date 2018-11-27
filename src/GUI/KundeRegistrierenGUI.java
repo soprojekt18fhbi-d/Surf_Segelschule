@@ -40,19 +40,19 @@ public class KundeRegistrierenGUI extends JFrame {
 	private JTextField textField_11;
 
 	
-	 	
-	 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-		public void run() {
-				try {
-					KundeRegistrierenGUI frame = new KundeRegistrierenGUI();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+//	 	
+//	 	public static void main(String[] args) {
+//		EventQueue.invokeLater(new Runnable() {
+//		public void run() {
+//				try {
+//					KundeRegistrierenGUI frame = new KundeRegistrierenGUI();
+//					frame.setVisible(true);
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//	}
 
 	/**
 	 * Create the frame.
@@ -71,16 +71,7 @@ public class KundeRegistrierenGUI extends JFrame {
 		JButton btnZurueck = new JButton("Zurück");
 		btnZurueck.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				EventQueue.invokeLater(new Runnable() {
-					public void run() {
-						try {
-							KundenverwaltungGUI frame = new KundenverwaltungGUI();
-							frame.setVisible(true);
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-					}
-			});
+				
 			}
 		});
 		
@@ -88,18 +79,6 @@ public class KundeRegistrierenGUI extends JFrame {
 		btnHauptmenue.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				EventQueue.invokeLater(new Runnable() {
-					public void run() {
-						try {
-		
-							Hauptmenue frame = new Hauptmenue();
-							frame.setVisible(true);
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-					}
-				});
-			// Fenster muss noch geschlossen werden 
 			}
 		});	
 		
@@ -129,6 +108,23 @@ public class KundeRegistrierenGUI extends JFrame {
 		
 		JButton btnLeeren = new JButton("  Leeren  ");
 		panel_1.add(btnLeeren);
+		btnLeeren.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				textField.setText("");
+				textField_1.setText("");
+				textField_2.setText("");
+				textField_3.setText("");
+				textField_4.setText("");
+				textField_5.setText("");
+				textField_6.setText("");
+				textField_7.setText("");
+				textField_8.setText("");
+				textField_9.setText("");
+				textField_10.setText("");
+				textField_11.setText("");
+			}
+		});
+		
 		
 		JButton btnHinzufügen = new JButton("Hinzuf\u00FCgen");
 		panel_1.add(btnHinzufügen);

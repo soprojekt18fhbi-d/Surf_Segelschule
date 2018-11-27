@@ -1,5 +1,15 @@
 package GUI;
 
+import javax.swing.JPanel;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.JButton;
+import javax.swing.LayoutStyle.ComponentPlacement;
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -14,56 +24,23 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
-public class KundenverwaltungGUI extends JFrame {
+public class KundenverwaltungGUI extends JPanel {
 
-	private JPanel contentPane;
+	
 
-	/**
-	 * Launch the application.
-	 */
-//	public static void main(String[] args) {
-//		EventQueue.invokeLater(new Runnable() {
-//			public void run() {
-//				try {
-//					KundenverwaltungGUI frame = new KundenverwaltungGUI();
-//					frame.setVisible(true);
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
-
-	/**
-	 * Create the frame.
-	 */
 	public KundenverwaltungGUI() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1000, 600);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
-		
-		JButton btnZurueck = new JButton("Zurueck");
+	
+		JButton btnZurueck = new JButton("Zurück");
 		btnZurueck.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				EventQueue.invokeLater(new Runnable() {
-					public void run() {
-						try {
-							Hauptmenue frame = new Hauptmenue();
-							frame.setVisible(true);
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-					}
-				});
-			// Fenster muss noch geschlossen werden 
+				MainFrame.change(MainFrame.getKundenverwaltung(), MainFrame.getHauptmenue());
 			}
-		});	
+		});
+		
 		
 		JButton btnKundeRegistrieren = new JButton("Kunde registrieren");
 		btnKundeRegistrieren.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent arg0) {
 				EventQueue.invokeLater(new Runnable() {
 					public void run() {
 						try {
@@ -73,13 +50,20 @@ public class KundenverwaltungGUI extends JFrame {
 							e.printStackTrace();
 						}
 					}
-				});
-			// Fenster muss noch geschlossen werden 
+			});
 			}
 		});
 		
+		
+		
 		JButton btnKundeAendern = new JButton("Kunde ändern");
-		GroupLayout gl_contentPane = new GroupLayout(contentPane);
+		btnKundeAendern.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MainFrame.change(MainFrame.getKundenverwaltung(), MainFrame.getKundeAendern());
+			}
+		});
+		
+		GroupLayout gl_contentPane = new GroupLayout(this);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
@@ -104,6 +88,6 @@ public class KundenverwaltungGUI extends JFrame {
 					.addComponent(btnKundeAendern, GroupLayout.PREFERRED_SIZE, 161, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap(70, Short.MAX_VALUE))
 		);
-		contentPane.setLayout(gl_contentPane);
+		setLayout(gl_contentPane);
 	}
 }
