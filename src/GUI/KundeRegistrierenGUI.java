@@ -71,14 +71,14 @@ public class KundeRegistrierenGUI extends JFrame {
 		JButton btnZurueck = new JButton("Zurück");
 		btnZurueck.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
+				//frame.dispose();
 			}
 		});
 		
 		JButton btnHauptmenue = new JButton("Hauptmenü");
 		btnHauptmenue.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+			//frame.dispose();	
 			}
 		});	
 		
@@ -126,9 +126,30 @@ public class KundeRegistrierenGUI extends JFrame {
 		});
 		
 		
-		JButton btnHinzufügen = new JButton("Hinzuf\u00FCgen");
-		panel_1.add(btnHinzufügen);
+		JButton btnHinzufuegen = new JButton("Hinzuf\u00FCgen");
+		panel_1.add(btnHinzufuegen);
+//		btnHinzufuegen.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent arg0) {
+//				String nachname = textField.getText();
+//				String vorname = textField_1.getText();
+//				int geburtsdatum = Integer.parseInt(textField_2.getText());
+//				Boolean surfschein = chckbxSurfschein.isSelected();
+//				Boolean segelschein = chckbxSegelschein.isSelected();
+//				Boolean motorboot = checkbxMotorboot.isSelected();
+//				
+//				int plz = Integer.parseInt(textField_3.getText());
+//				String ort = textField_4.getText();
+//				String strasse = textField_5.getText();
+//				int hausnummer	= Integer.parseInt(textField_6.getText());
+//				int plz2 = Integer.parseInt(textField_7.getText());
+//				String ort2 = textField_8.getText();
+//				String strasse2 = textField_9.getText();
+//				int hausnummer2 = Integer.parseInt(textField_10.getText());
+//				String email = textField_10.getText();
+//			}
+//		});
 		
+	
 		JPanel panel_2 = new JPanel();
 		contentPane.add(panel_2, BorderLayout.CENTER);
 		GridBagLayout gbl_panel_2 = new GridBagLayout();

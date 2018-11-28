@@ -53,7 +53,8 @@ public class MainFrame extends JFrame {
 	
 	// Wirtschaftlichkeitsrechnung
 	private static WirtschaftlichkeitsverwaltungGUI wirtschaftlichkeitsverwaltung = new WirtschaftlichkeitsverwaltungGUI();
-	
+	private static WirtschaftlichkeitEinzelnGUI wirtschaftlichkeitEinzeln = new WirtschaftlichkeitEinzelnGUI();
+	private static WirtschaftlichkeitEinzelnGUI wirtschaftlichkeitGesamt = new WirtschaftlichkeitEinzelnGUI();
 
 	/**
 	 * Launch the application.
@@ -106,6 +107,8 @@ public class MainFrame extends JFrame {
 		contentPane.add(verleihFormular);
 		contentPane.add(kundenverwaltung);
 		contentPane.add(kundeAendern);
+		contentPane.add(wirtschaftlichkeitGesamt);
+		contentPane.add(wirtschaftlichkeitEinzeln);
 		contentPane.add(wirtschaftlichkeitsverwaltung);
 
 		
@@ -255,4 +258,15 @@ public class MainFrame extends JFrame {
 	public static JPanel getWirtschaftlichkeitsverwaltung() {
 		return wirtschaftlichkeitsverwaltung;
 	}
+	
+	public static JPanel getWirtschaftlichkeitEinzeln() {
+		return wirtschaftlichkeitEinzeln;
+	}
+	
+	public static JPanel getWirtschaftlichkeitGesamt() {
+		return wirtschaftlichkeitGesamt;
+	}
+	
+	
 }
+	

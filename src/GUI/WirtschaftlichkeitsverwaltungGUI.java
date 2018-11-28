@@ -25,8 +25,19 @@ public class WirtschaftlichkeitsverwaltungGUI extends JPanel {
 		});
 		
 		JButton btnZusammenfassend = new JButton("Zusammenfassend");
+		btnZusammenfassend.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MainFrame.change(MainFrame.getWirtschaftlichkeitsverwaltung(), MainFrame.getWirtschaftlichkeitGesamt());
+			}
+		});
 		
-		JButton btnEinzelndBerechnen = new JButton("Einzelnd Berechnen");
+		JButton btnEinzelnBerechnen = new JButton("Einzeln Berechnen");
+		btnEinzelnBerechnen.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MainFrame.change(MainFrame.getWirtschaftlichkeitsverwaltung(), MainFrame.getWirtschaftlichkeitEinzeln());
+			}
+		});
+		
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -34,13 +45,13 @@ public class WirtschaftlichkeitsverwaltungGUI extends JPanel {
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 						.addGroup(groupLayout.createSequentialGroup()
 							.addGap(23)
-							.addComponent(btnZurck))
+							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
+								.addComponent(btnZusammenfassend, GroupLayout.DEFAULT_SIZE, 397, Short.MAX_VALUE)
+								.addComponent(btnEinzelnBerechnen, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
 						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(70)
-							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addComponent(btnEinzelndBerechnen, GroupLayout.PREFERRED_SIZE, 299, GroupLayout.PREFERRED_SIZE)
-								.addComponent(btnZusammenfassend, GroupLayout.PREFERRED_SIZE, 299, GroupLayout.PREFERRED_SIZE))))
-					.addContainerGap(81, Short.MAX_VALUE))
+							.addContainerGap()
+							.addComponent(btnZurck)))
+					.addContainerGap(30, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -50,7 +61,7 @@ public class WirtschaftlichkeitsverwaltungGUI extends JPanel {
 					.addGap(18)
 					.addComponent(btnZusammenfassend, GroupLayout.PREFERRED_SIZE, 93, GroupLayout.PREFERRED_SIZE)
 					.addGap(26)
-					.addComponent(btnEinzelndBerechnen, GroupLayout.PREFERRED_SIZE, 93, GroupLayout.PREFERRED_SIZE)
+					.addComponent(btnEinzelnBerechnen, GroupLayout.PREFERRED_SIZE, 93, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap(28, Short.MAX_VALUE))
 		);
 		setLayout(groupLayout);
