@@ -40,19 +40,19 @@ public class KundeRegistrierenGUI extends JFrame {
 	private JTextField textField_11;
 
 	
-	 	
-	 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-		public void run() {
-				try {
-					KundeRegistrierenGUI frame = new KundeRegistrierenGUI();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+//	 	
+//	 	public static void main(String[] args) {
+//		EventQueue.invokeLater(new Runnable() {
+//		public void run() {
+//				try {
+//					KundeRegistrierenGUI frame = new KundeRegistrierenGUI();
+//					frame.setVisible(true);
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//	}
 
 	/**
 	 * Create the frame.
@@ -71,35 +71,14 @@ public class KundeRegistrierenGUI extends JFrame {
 		JButton btnZurueck = new JButton("Zurück");
 		btnZurueck.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				EventQueue.invokeLater(new Runnable() {
-					public void run() {
-						try {
-							KundenverwaltungGUI frame = new KundenverwaltungGUI();
-							frame.setVisible(true);
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-					}
-			});
+				//frame.dispose();
 			}
 		});
 		
 		JButton btnHauptmenue = new JButton("Hauptmenü");
 		btnHauptmenue.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				EventQueue.invokeLater(new Runnable() {
-					public void run() {
-						try {
-		
-							Hauptmenue frame = new Hauptmenue();
-							frame.setVisible(true);
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-					}
-				});
-			// Fenster muss noch geschlossen werden 
+			//frame.dispose();	
 			}
 		});	
 		
@@ -129,10 +108,48 @@ public class KundeRegistrierenGUI extends JFrame {
 		
 		JButton btnLeeren = new JButton("  Leeren  ");
 		panel_1.add(btnLeeren);
+		btnLeeren.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				textField.setText("");
+				textField_1.setText("");
+				textField_2.setText("");
+				textField_3.setText("");
+				textField_4.setText("");
+				textField_5.setText("");
+				textField_6.setText("");
+				textField_7.setText("");
+				textField_8.setText("");
+				textField_9.setText("");
+				textField_10.setText("");
+				textField_11.setText("");
+			}
+		});
 		
-		JButton btnHinzufügen = new JButton("Hinzuf\u00FCgen");
-		panel_1.add(btnHinzufügen);
 		
+		JButton btnHinzufuegen = new JButton("Hinzuf\u00FCgen");
+		panel_1.add(btnHinzufuegen);
+//		btnHinzufuegen.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent arg0) {
+//				String nachname = textField.getText();
+//				String vorname = textField_1.getText();
+//				int geburtsdatum = Integer.parseInt(textField_2.getText());
+//				Boolean surfschein = chckbxSurfschein.isSelected();
+//				Boolean segelschein = chckbxSegelschein.isSelected();
+//				Boolean motorboot = checkbxMotorboot.isSelected();
+//				
+//				int plz = Integer.parseInt(textField_3.getText());
+//				String ort = textField_4.getText();
+//				String strasse = textField_5.getText();
+//				int hausnummer	= Integer.parseInt(textField_6.getText());
+//				int plz2 = Integer.parseInt(textField_7.getText());
+//				String ort2 = textField_8.getText();
+//				String strasse2 = textField_9.getText();
+//				int hausnummer2 = Integer.parseInt(textField_10.getText());
+//				String email = textField_10.getText();
+//			}
+//		});
+		
+	
 		JPanel panel_2 = new JPanel();
 		contentPane.add(panel_2, BorderLayout.CENTER);
 		GridBagLayout gbl_panel_2 = new GridBagLayout();
