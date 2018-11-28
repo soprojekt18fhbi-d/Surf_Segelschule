@@ -58,6 +58,7 @@ public class KundeRegistrierenGUI extends JFrame {
 	 * Create the frame.
 	 */
 	public KundeRegistrierenGUI() {
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 50, 800, 700);
 		contentPane = new JPanel();
