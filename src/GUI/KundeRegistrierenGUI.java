@@ -71,7 +71,7 @@ public class KundeRegistrierenGUI extends JFrame {
 		JButton btnZurueck = new JButton("Zurück");
 		btnZurueck.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				//frame.dispose();
+				dispose();
 			}
 		});
 		
