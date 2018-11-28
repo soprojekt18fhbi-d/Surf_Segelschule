@@ -16,16 +16,13 @@ public class Testanbindung{
         conn.close();
     }
 
-	
-	
-	
 
 
 public static void viewTable(Connection con)
 	    throws SQLException {
 
 	    Statement stmt = null;
-	    String query = "select * from KUNDE where ID=1";
+	    String query = "select * from KUNDE";
 	    try {
 	        stmt = con.createStatement();
 	        ResultSet rs = stmt.executeQuery(query);
