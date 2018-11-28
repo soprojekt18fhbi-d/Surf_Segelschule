@@ -2,7 +2,7 @@
  * @author Ben S.
  */
 
-package GUI;
+package GUIRechnungsverwaltung;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -14,6 +14,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.border.EmptyBorder;
+
+import GUI.Hauptmenue;
+
 import java.awt.GridBagLayout;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -36,7 +39,7 @@ public class RechnungGUI extends JFrame{
 			EventQueue.invokeLater(new Runnable() {
 				public void run() {
 					try {
-						VerleihenGUI frame = new VerleihenGUI();
+						RechnungGUI frame = new RechnungGUI();
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
@@ -79,6 +82,8 @@ public class RechnungGUI extends JFrame{
 			);
 			panel.setLayout(gl_panel);
 			
+			
+			
 			JPanel panel_1 = new JPanel();
 			contentPane.add(panel_1, BorderLayout.CENTER);
 			GridBagLayout gbl_panel_1 = new GridBagLayout();
@@ -88,13 +93,10 @@ public class RechnungGUI extends JFrame{
 			gbl_panel_1.rowWeights = new double[]{1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, Double.MIN_VALUE};
 			panel_1.setLayout(gbl_panel_1);
 			
-			JLabel lblKunde = new JLabel("Kunde:");
-			lblKunde.setFont(new Font("Tahoma", Font.BOLD, 16));
-			GridBagConstraints gbc_lblKunde = new GridBagConstraints();
-			gbc_lblKunde.insets = new Insets(0, 0, 5, 5);
-			gbc_lblKunde.gridx = 0;
-			gbc_lblKunde.gridy = 0;
-			panel_1.add(lblKunde, gbc_lblKunde);
+			
+			//Vertragesschlieﬂende
+			//Line 0
+			
 			
 			JLabel lblGetname = new JLabel("getName");
 			lblGetname.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -105,112 +107,142 @@ public class RechnungGUI extends JFrame{
 			gbc_lblGetname.gridy = 0;
 			panel_1.add(lblGetname, gbc_lblGetname);
 			
-			JLabel lblArtikel = new JLabel("Artikel:");
-			lblArtikel.setFont(new Font("Tahoma", Font.BOLD, 16));
+			
+			JLabel lblFirmenName = new JLabel("Surf- und Segelcenter");
+			lblFirmenName.setFont(new Font("Tahoma", Font.PLAIN, 15));
+			GridBagConstraints gbc_lblFirmenName = new GridBagConstraints();
+			gbc_lblFirmenName.insets = new Insets(0, 0, 5, 0);
+			gbc_lblFirmenName.anchor = GridBagConstraints.WEST;
+			gbc_lblFirmenName.gridx = 3;
+			gbc_lblFirmenName.gridy = 0;
+			panel_1.add(lblFirmenName, gbc_lblFirmenName);
+			
+			
+			//Line 1
+			
+			JLabel lblPlzOrt = new JLabel("getHeimatPLZ+Ort");
+			lblPlzOrt.setFont(new Font("Tahoma", Font.PLAIN, 15));
+			GridBagConstraints gbc_lblPlzOrt = new GridBagConstraints();
+			gbc_lblPlzOrt.anchor = GridBagConstraints.WEST;
+			gbc_lblPlzOrt.insets = new Insets(0, 0, 5, 5);
+			gbc_lblPlzOrt.gridx = 1;
+			gbc_lblPlzOrt.gridy = 1;
+			panel_1.add(lblPlzOrt, gbc_lblPlzOrt);
+			
+			JLabel lblGetSee = new JLabel("Ostsee");
+			lblGetSee.setFont(new Font("Tahoma", Font.PLAIN, 15));
+			GridBagConstraints gbc_lblGetSee = new GridBagConstraints();
+			gbc_lblGetSee.anchor = GridBagConstraints.WEST;
+			gbc_lblGetSee.insets = new Insets(0, 0, 5, 0);
+			gbc_lblGetSee.gridx = 3;
+			gbc_lblGetSee.gridy = 1;
+			panel_1.add(lblGetSee, gbc_lblGetSee);
+			
+			//Line 2
+			
+			JLabel lblGetStrasseNummer = new JLabel("getHeimatStrasse+Nummer");
+			lblGetStrasseNummer.setFont(new Font("Tahoma", Font.PLAIN, 15));
+			GridBagConstraints gbc_lblGetStrasseNummer = new GridBagConstraints();
+			gbc_lblGetStrasseNummer.anchor = GridBagConstraints.WEST;
+			gbc_lblGetStrasseNummer.insets = new Insets(0, 0, 5, 5);
+			gbc_lblGetStrasseNummer.gridx = 1;
+			gbc_lblGetStrasseNummer.gridy = 2;
+			panel_1.add(lblGetStrasseNummer, gbc_lblGetStrasseNummer);
+			
+			JLabel lblGetStandort = new JLabel("getStandort");
+			lblGetStandort.setFont(new Font("Tahoma", Font.PLAIN, 15));
+			GridBagConstraints gbc_lblGetStandort = new GridBagConstraints();
+			gbc_lblGetStandort.anchor = GridBagConstraints.WEST;
+			gbc_lblGetStandort.insets = new Insets(0, 0, 5, 0);
+			gbc_lblGetStandort.gridx = 3;
+			gbc_lblGetStandort.gridy = 2;
+			panel_1.add(lblGetStandort, gbc_lblGetStandort);
+			
+			
+			//Buchungsdetails
+			
+			//Line 3
+			
+			JLabel lblGetRechnungsID = new JLabel("Rechnungsnummer: + getRechnungsID");
+			lblGetRechnungsID.setFont(new Font("Tahoma", Font.PLAIN, 15));
+			GridBagConstraints gbc_lblGetRechnungsID = new GridBagConstraints();
+			gbc_lblGetRechnungsID.anchor = GridBagConstraints.WEST;
+			gbc_lblGetRechnungsID.insets = new Insets(0, 0, 5, 5);
+			gbc_lblGetRechnungsID.gridx = 1;
+			gbc_lblGetRechnungsID.gridy = 3;
+			panel_1.add(lblGetRechnungsID, gbc_lblGetRechnungsID);
+			
+			
+			// Line 4
+			
+			JLabel lblArtikel = new JLabel("Artikel");
+			lblArtikel.setFont(new Font("Tahoma", Font.PLAIN, 15));
 			GridBagConstraints gbc_lblArtikel = new GridBagConstraints();
+			gbc_lblArtikel.anchor = GridBagConstraints.WEST;
 			gbc_lblArtikel.insets = new Insets(0, 0, 5, 5);
-			gbc_lblArtikel.gridx = 2;
-			gbc_lblArtikel.gridy = 0;
+			gbc_lblArtikel.gridx = 1;
+			gbc_lblArtikel.gridy = 4;
 			panel_1.add(lblArtikel, gbc_lblArtikel);
 			
-			JLabel lblGetbezeichnung = new JLabel("getBezeichnung");
-			lblGetbezeichnung.setFont(new Font("Tahoma", Font.PLAIN, 15));
-			GridBagConstraints gbc_lblGetbezeichnung = new GridBagConstraints();
-			gbc_lblGetbezeichnung.insets = new Insets(0, 0, 5, 0);
-			gbc_lblGetbezeichnung.anchor = GridBagConstraints.WEST;
-			gbc_lblGetbezeichnung.gridx = 3;
-			gbc_lblGetbezeichnung.gridy = 0;
-			panel_1.add(lblGetbezeichnung, gbc_lblGetbezeichnung);
+
+
+			JLabel lblBezeichnung = new JLabel("Bezeichnung");
+			lblBezeichnung.setFont(new Font("Tahoma", Font.PLAIN, 15));
+			GridBagConstraints gbc_lblBezeichnung = new GridBagConstraints();
+			gbc_lblBezeichnung.anchor = GridBagConstraints.WEST;
+			gbc_lblBezeichnung.insets = new Insets(0, 0, 5, 5);
+			gbc_lblBezeichnung.gridx = 2;
+			gbc_lblBezeichnung.gridy = 4;
+			panel_1.add(lblBezeichnung, gbc_lblBezeichnung);
 			
-			JLabel lblGetadressart = new JLabel("getAdressArt");
-			lblGetadressart.setFont(new Font("Tahoma", Font.PLAIN, 15));
-			GridBagConstraints gbc_lblGetadressart = new GridBagConstraints();
-			gbc_lblGetadressart.anchor = GridBagConstraints.WEST;
-			gbc_lblGetadressart.insets = new Insets(0, 0, 5, 5);
-			gbc_lblGetadressart.gridx = 1;
-			gbc_lblGetadressart.gridy = 1;
-			panel_1.add(lblGetadressart, gbc_lblGetadressart);
 			
-			JLabel lblGetartikelnummer = new JLabel("getArtikelNummer");
-			lblGetartikelnummer.setFont(new Font("Tahoma", Font.PLAIN, 15));
-			GridBagConstraints gbc_lblGetartikelnummer = new GridBagConstraints();
-			gbc_lblGetartikelnummer.anchor = GridBagConstraints.WEST;
-			gbc_lblGetartikelnummer.insets = new Insets(0, 0, 5, 0);
-			gbc_lblGetartikelnummer.gridx = 3;
-			gbc_lblGetartikelnummer.gridy = 1;
-			panel_1.add(lblGetartikelnummer, gbc_lblGetartikelnummer);
 			
-			JLabel lblGetplzort = new JLabel("getPLZ+Ort");
-			lblGetplzort.setFont(new Font("Tahoma", Font.PLAIN, 15));
-			GridBagConstraints gbc_lblGetplzort = new GridBagConstraints();
-			gbc_lblGetplzort.anchor = GridBagConstraints.WEST;
-			gbc_lblGetplzort.insets = new Insets(0, 0, 5, 5);
-			gbc_lblGetplzort.gridx = 1;
-			gbc_lblGetplzort.gridy = 2;
-			panel_1.add(lblGetplzort, gbc_lblGetplzort);
+			JLabel lblPreis = new JLabel("Preis");
+			lblPreis.setFont(new Font("Tahoma", Font.PLAIN, 15));
+			GridBagConstraints gbc_lblPreis = new GridBagConstraints();
+			gbc_lblPreis.anchor = GridBagConstraints.WEST;
+			gbc_lblPreis.insets = new Insets(0, 0, 5, 0);
+			gbc_lblPreis.gridx = 3;
+			gbc_lblPreis.gridy = 4;
+			panel_1.add(lblPreis, gbc_lblPreis);
 			
-			JLabel lblGetfarbe = new JLabel("getFarbe");
-			lblGetfarbe.setFont(new Font("Tahoma", Font.PLAIN, 15));
-			GridBagConstraints gbc_lblGetfarbe = new GridBagConstraints();
-			gbc_lblGetfarbe.anchor = GridBagConstraints.WEST;
-			gbc_lblGetfarbe.insets = new Insets(0, 0, 5, 0);
-			gbc_lblGetfarbe.gridx = 3;
-			gbc_lblGetfarbe.gridy = 2;
-			panel_1.add(lblGetfarbe, gbc_lblGetfarbe);
 			
-			JLabel lblGetstrassenummer = new JLabel("getStrasse+Nummer");
-			lblGetstrassenummer.setFont(new Font("Tahoma", Font.PLAIN, 15));
-			GridBagConstraints gbc_lblGetstrassenummer = new GridBagConstraints();
-			gbc_lblGetstrassenummer.anchor = GridBagConstraints.WEST;
-			gbc_lblGetstrassenummer.insets = new Insets(0, 0, 5, 5);
-			gbc_lblGetstrassenummer.gridx = 1;
-			gbc_lblGetstrassenummer.gridy = 3;
-			panel_1.add(lblGetstrassenummer, gbc_lblGetstrassenummer);
 			
-			JLabel lblGetbaujahr = new JLabel("getBaujahr");
-			lblGetbaujahr.setFont(new Font("Tahoma", Font.PLAIN, 15));
-			GridBagConstraints gbc_lblGetbaujahr = new GridBagConstraints();
-			gbc_lblGetbaujahr.anchor = GridBagConstraints.WEST;
-			gbc_lblGetbaujahr.insets = new Insets(0, 0, 5, 0);
-			gbc_lblGetbaujahr.gridx = 3;
-			gbc_lblGetbaujahr.gridy = 3;
-			panel_1.add(lblGetbaujahr, gbc_lblGetbaujahr);
+			//Line 5
 			
-			JLabel lblGetgeburtsdatum = new JLabel("getGeburtsdatum");
-			lblGetgeburtsdatum.setFont(new Font("Tahoma", Font.PLAIN, 15));
-			GridBagConstraints gbc_lblGetgeburtsdatum = new GridBagConstraints();
-			gbc_lblGetgeburtsdatum.anchor = GridBagConstraints.WEST;
-			gbc_lblGetgeburtsdatum.insets = new Insets(0, 0, 5, 5);
-			gbc_lblGetgeburtsdatum.gridx = 1;
-			gbc_lblGetgeburtsdatum.gridy = 4;
-			panel_1.add(lblGetgeburtsdatum, gbc_lblGetgeburtsdatum);
+			JLabel lblGetArtikelID = new JLabel("getArtikel");
+			lblGetArtikelID.setFont(new Font("Tahoma", Font.PLAIN, 15));
+			GridBagConstraints gbc_lblGetArtikelID = new GridBagConstraints();
+			gbc_lblGetArtikelID.anchor = GridBagConstraints.WEST;
+			gbc_lblGetArtikelID.insets = new Insets(0, 0, 5, 5);
+			gbc_lblGetArtikelID.gridx = 1;
+			gbc_lblGetArtikelID.gridy = 5;
+			panel_1.add(lblGetArtikelID, gbc_lblGetArtikelID);
 			
-			JLabel lblGetmakel = new JLabel("getMakel");
-			lblGetmakel.setFont(new Font("Tahoma", Font.PLAIN, 15));
-			GridBagConstraints gbc_lblGetmakel = new GridBagConstraints();
-			gbc_lblGetmakel.anchor = GridBagConstraints.WEST;
-			gbc_lblGetmakel.insets = new Insets(0, 0, 5, 0);
-			gbc_lblGetmakel.gridx = 3;
-			gbc_lblGetmakel.gridy = 4;
-			panel_1.add(lblGetmakel, gbc_lblGetmakel);
+
+
+			JLabel lblGetBezeichnung = new JLabel("getBezeichnung");
+			lblGetBezeichnung.setFont(new Font("Tahoma", Font.PLAIN, 15));
+			GridBagConstraints gbc_lblGetBezeichnung = new GridBagConstraints();
+			gbc_lblGetBezeichnung.anchor = GridBagConstraints.WEST;
+			gbc_lblGetBezeichnung.insets = new Insets(0, 0, 5, 5);
+			gbc_lblGetBezeichnung.gridx = 2;
+			gbc_lblGetBezeichnung.gridy = 5;
+			panel_1.add(lblGetBezeichnung, gbc_lblGetBezeichnung);
 			
-			JLabel lblGetfhrerschein = new JLabel("getF\u00FChrerschein");
-			lblGetfhrerschein.setFont(new Font("Tahoma", Font.PLAIN, 15));
-			GridBagConstraints gbc_lblGetfhrerschein = new GridBagConstraints();
-			gbc_lblGetfhrerschein.anchor = GridBagConstraints.WEST;
-			gbc_lblGetfhrerschein.insets = new Insets(0, 0, 5, 5);
-			gbc_lblGetfhrerschein.gridx = 1;
-			gbc_lblGetfhrerschein.gridy = 5;
-			panel_1.add(lblGetfhrerschein, gbc_lblGetfhrerschein);
 			
-			JLabel lblGetbentigterfhrerschein = new JLabel("getBen\u00F6tigterF\u00FChrerschein");
-			lblGetbentigterfhrerschein.setFont(new Font("Tahoma", Font.PLAIN, 15));
-			GridBagConstraints gbc_lblGetbentigterfhrerschein = new GridBagConstraints();
-			gbc_lblGetbentigterfhrerschein.anchor = GridBagConstraints.WEST;
-			gbc_lblGetbentigterfhrerschein.insets = new Insets(0, 0, 5, 0);
-			gbc_lblGetbentigterfhrerschein.gridx = 3;
-			gbc_lblGetbentigterfhrerschein.gridy = 5;
-			panel_1.add(lblGetbentigterfhrerschein, gbc_lblGetbentigterfhrerschein);
+			
+			JLabel lblGetPreis = new JLabel("getPreis");
+			lblGetPreis.setFont(new Font("Tahoma", Font.PLAIN, 15));
+			GridBagConstraints gbc_lblGetPreis = new GridBagConstraints();
+			gbc_lblGetPreis.anchor = GridBagConstraints.WEST;
+			gbc_lblGetPreis.insets = new Insets(0, 0, 5, 0);
+			gbc_lblGetPreis.gridx = 3;
+			gbc_lblGetPreis.gridy = 5;
+			panel_1.add(lblGetPreis, gbc_lblGetPreis);
+			
+			
+			//Line 6
 			
 			JLabel lblGetemail = new JLabel("getEmail");
 			lblGetemail.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -221,6 +253,19 @@ public class RechnungGUI extends JFrame{
 			gbc_lblGetemail.gridy = 6;
 			panel_1.add(lblGetemail, gbc_lblGetemail);
 			
+			//Line 7
+			
+			JLabel lblTest = new JLabel("getEmail");
+			lblGetemail.setFont(new Font("Tahoma", Font.PLAIN, 15));
+			GridBagConstraints gbc_lblTest = new GridBagConstraints();
+			gbc_lblTest.anchor = GridBagConstraints.WEST;
+			gbc_lblTest.insets = new Insets(0, 0, 5, 5);
+			gbc_lblTest.gridx = 1;
+			gbc_lblTest.gridy = 7;
+			panel_1.add(lblTest, gbc_lblTest);
+			
+			//Line 8
+			
 			JLabel lblAusleihid = new JLabel("AusleihID:");
 			lblAusleihid.setFont(new Font("Tahoma", Font.PLAIN, 15));
 			GridBagConstraints gbc_lblAusleihid = new GridBagConstraints();
@@ -229,6 +274,7 @@ public class RechnungGUI extends JFrame{
 			gbc_lblAusleihid.gridx = 1;
 			gbc_lblAusleihid.gridy = 8;
 			panel_1.add(lblAusleihid, gbc_lblAusleihid);
+			
 			
 			JLabel lblGetausleihid = new JLabel("getAusleihID");
 			lblGetausleihid.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -239,6 +285,8 @@ public class RechnungGUI extends JFrame{
 			gbc_lblGetausleihid.gridy = 8;
 			panel_1.add(lblGetausleihid, gbc_lblGetausleihid);
 			
+			//Line 9
+			
 			JLabel lblAusleihbeginn = new JLabel("Ausleih-Beginn:");
 			lblAusleihbeginn.setFont(new Font("Tahoma", Font.PLAIN, 15));
 			GridBagConstraints gbc_lblAusleihbeginn = new GridBagConstraints();
@@ -247,6 +295,7 @@ public class RechnungGUI extends JFrame{
 			gbc_lblAusleihbeginn.gridx = 1;
 			gbc_lblAusleihbeginn.gridy = 9;
 			panel_1.add(lblAusleihbeginn, gbc_lblAusleihbeginn);
+			
 			
 			JLabel lblGetbeginn = new JLabel("getBeginn");
 			lblGetbeginn.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -257,6 +306,9 @@ public class RechnungGUI extends JFrame{
 			gbc_lblGetbeginn.gridy = 9;
 			panel_1.add(lblGetbeginn, gbc_lblGetbeginn);
 			
+			//Line 10
+
+			
 			JLabel lblAusleihende = new JLabel("Ausleih-Ende:");
 			lblAusleihende.setFont(new Font("Tahoma", Font.PLAIN, 15));
 			GridBagConstraints gbc_lblAusleihende = new GridBagConstraints();
@@ -266,6 +318,7 @@ public class RechnungGUI extends JFrame{
 			gbc_lblAusleihende.gridy = 10;
 			panel_1.add(lblAusleihende, gbc_lblAusleihende);
 			
+			
 			JLabel lblGetende = new JLabel("getEnde");
 			lblGetende.setFont(new Font("Tahoma", Font.PLAIN, 15));
 			GridBagConstraints gbc_lblGetende = new GridBagConstraints();
@@ -274,6 +327,8 @@ public class RechnungGUI extends JFrame{
 			gbc_lblGetende.gridx = 3;
 			gbc_lblGetende.gridy = 10;
 			panel_1.add(lblGetende, gbc_lblGetende);
+			
+			//Line 11
 			
 			JLabel lblVrsKosten = new JLabel("vrs. Kosten:");
 			lblVrsKosten.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -292,22 +347,33 @@ public class RechnungGUI extends JFrame{
 			gbc_lblGetpreis.gridy = 11;
 			panel_1.add(lblGetpreis, gbc_lblGetpreis);
 			
+			
+			//South-Panel
 			JPanel panel_2 = new JPanel();
 			contentPane.add(panel_2, BorderLayout.SOUTH);
 			
-			JButton btnAbbrechen = new JButton("Abbrechen");
-			btnAbbrechen.setFont(new Font("Tahoma", Font.PLAIN, 18));
 			
-			JButton btnBesttigen = new JButton("Best\u00E4tigen");
-			btnBesttigen.setFont(new Font("Tahoma", Font.PLAIN, 18));
+			//Buttons South
+			JButton btnDrucken = new JButton("Drucken");
+			btnDrucken.setFont(new Font("Tahoma", Font.PLAIN, 18));
+			
+			JButton btnRechnSenden = new JButton("Rechnung Senden");
+			btnRechnSenden.setFont(new Font("Tahoma", Font.PLAIN, 18));
+			
+			JButton btnFertig = new JButton("Fertig");
+			btnFertig.setFont(new Font("Tahoma", Font.PLAIN, 18));
+			
+			
 			GroupLayout gl_panel_2 = new GroupLayout(panel_2);
 			gl_panel_2.setHorizontalGroup(
 				gl_panel_2.createParallelGroup(Alignment.TRAILING)
 					.addGroup(gl_panel_2.createSequentialGroup()
 						.addContainerGap(646, Short.MAX_VALUE)
-						.addComponent(btnAbbrechen, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE)
+						.addComponent(btnDrucken, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE)
 						.addGap(18)
-						.addComponent(btnBesttigen, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE)
+						.addComponent(btnRechnSenden, GroupLayout.PREFERRED_SIZE, 200, GroupLayout.PREFERRED_SIZE)
+						.addGap(18)
+						.addComponent(btnFertig, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE)
 						.addContainerGap())
 			);
 			gl_panel_2.setVerticalGroup(
@@ -315,8 +381,10 @@ public class RechnungGUI extends JFrame{
 					.addGroup(gl_panel_2.createSequentialGroup()
 						.addGap(6)
 						.addGroup(gl_panel_2.createParallelGroup(Alignment.BASELINE)
-							.addComponent(btnBesttigen, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)
-							.addComponent(btnAbbrechen, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE))
+							.addComponent(btnDrucken, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)
+							.addComponent(btnRechnSenden, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)
+							.addComponent(btnFertig, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)
+							)
 						.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 			);
 			panel_2.setLayout(gl_panel_2);
@@ -330,14 +398,22 @@ public class RechnungGUI extends JFrame{
 				}
 			});
 			
-			btnAbbrechen.addActionListener(new ActionListener() {
+			btnDrucken.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					BuchungsverwaltungGUI frame = new BuchungsverwaltungGUI();
+//					BuchungsverwaltungGUI frame = new BuchungsverwaltungGUI();
 					dispose();
 				}
 			});
 			
-			btnBesttigen.addActionListener(new ActionListener() {
+			btnRechnSenden.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					JOptionPane.showMessageDialog(null, "Die Ausleihe wurde erfasst", "Verleih-Best‰tigung", JOptionPane.PLAIN_MESSAGE);
+					Hauptmenue frame = new Hauptmenue();
+					dispose();
+				}
+			});
+			
+			btnFertig.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					JOptionPane.showMessageDialog(null, "Die Ausleihe wurde erfasst", "Verleih-Best‰tigung", JOptionPane.PLAIN_MESSAGE);
 					Hauptmenue frame = new Hauptmenue();

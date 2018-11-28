@@ -2,7 +2,7 @@
  * @author Ben S.
  */
 
-package GUI;
+package GUIRechnungsverwaltung;
 
 	import java.awt.BorderLayout;
 	import java.awt.EventQueue;
@@ -13,7 +13,10 @@ package GUI;
 	import javax.swing.JPanel;
 	import javax.swing.GroupLayout.Alignment;
 	import javax.swing.border.EmptyBorder;
-	import javax.swing.JScrollPane;
+
+import GUI.Hauptmenue;
+
+import javax.swing.JScrollPane;
 	import javax.swing.JList;
 	import java.awt.Dimension;
 	import java.awt.Font;
@@ -135,7 +138,7 @@ public class RechungsverwaltungGUI extends JFrame {
 			
 			btnAuswhlen.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					SportGeräteGUI frame = new SportGeräteGUI();
+//					SportGeräteGUI frame = new SportGeräteGUI();
 					setVisible(false);
 				}
 			});

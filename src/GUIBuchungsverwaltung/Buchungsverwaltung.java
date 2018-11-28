@@ -1,4 +1,4 @@
-package GUI;
+package GUIBuchungsverwaltung;
 
 import java.awt.BorderLayout;
 import java.awt.Font;
@@ -13,6 +13,8 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.border.EmptyBorder;
+
+import GUI.MainFrame;
 
 public class Buchungsverwaltung extends JPanel {
 
@@ -92,6 +94,7 @@ public class Buchungsverwaltung extends JPanel {
 		
 		btnAktiveAusleihen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				MainFrame.change(MainFrame.getBuchungsverwaltung(), MainFrame.getAktiveAusleihen());
 			}
 		});
 
@@ -103,6 +106,7 @@ public class Buchungsverwaltung extends JPanel {
 		
 		btnAbgeschlosseneBuchungen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				MainFrame.change(MainFrame.getBuchungsverwaltung(), MainFrame.getAbgeschlosseneBuchungen());
 			}
 		});
 

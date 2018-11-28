@@ -1,4 +1,4 @@
-package GUI;
+package GUIBuchungsverwaltung;
 
 import java.awt.BorderLayout;
 import java.awt.Font;
@@ -7,6 +7,9 @@ import java.awt.GridBagLayout;
 import javax.swing.GroupLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+
+import GUI.MainFrame;
+
 import javax.swing.GroupLayout.Alignment;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
@@ -14,9 +17,17 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class BuchungsTypAuswahl extends JPanel {
+	
+	static boolean verkauf;
+	
+	//Methode zur Auswahl ob Verkauf- oder Verleih-Panel geöffnet wird
+	public static boolean getBool(){
+		return verkauf;
+	}	
 
 	/**
 	 * Create the panel.
+	 * @return 
 	 */
 	public BuchungsTypAuswahl() {
 		setLayout(new BorderLayout(0, 0));
@@ -76,14 +87,19 @@ public class BuchungsTypAuswahl extends JPanel {
 		btnGertVerleihen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MainFrame.change(MainFrame.getBuchungsTypAuswahl(), MainFrame.getTypAuswahl());
+				verkauf = false;
 			}
 		});
 		
 		btnGertVerkaufen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MainFrame.change(MainFrame.getBuchungsTypAuswahl(), MainFrame.getTypAuswahl());
+				verkauf = true;
 			}
 		});
 		
+	
+		
 	}
+
 }
