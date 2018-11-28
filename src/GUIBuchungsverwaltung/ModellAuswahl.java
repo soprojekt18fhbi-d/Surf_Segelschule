@@ -1,4 +1,4 @@
-package GUI;
+package GUIBuchungsverwaltung;
 
 import java.awt.BorderLayout;
 import java.awt.Font;
@@ -16,6 +16,9 @@ import javax.swing.JScrollPane;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JTextField;
 import javax.swing.LayoutStyle.ComponentPlacement;
+
+import GUI.MainFrame;
+
 import java.awt.Component;
 
 public class ModellAuswahl extends JPanel {
@@ -114,13 +117,21 @@ public class ModellAuswahl extends JPanel {
 		
 		btnAuswhlen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MainFrame.change(MainFrame.getModellAuswahl(), MainFrame.getGerätAuswahlAusleihe());
+				boolean bool = BuchungsTypAuswahl.getBool();
+				if(bool == false)
+					MainFrame.change(MainFrame.getModellAuswahl(), MainFrame.getGerätAuswahlAusleihe());
+				else
+					MainFrame.change(MainFrame.getModellAuswahl(), MainFrame.getGerätAuswahlVerkauf());
 			}
 		});
 		
 		btnSuchen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MainFrame.change(MainFrame.getModellAuswahl(), MainFrame.getGerätAuswahlAusleihe());
+				boolean bool = BuchungsTypAuswahl.getBool();
+				if(bool == false)
+					MainFrame.change(MainFrame.getModellAuswahl(), MainFrame.getGerätAuswahlAusleihe());
+				else
+					MainFrame.change(MainFrame.getModellAuswahl(), MainFrame.getGerätAuswahlVerkauf());
 			}
 		});
 
