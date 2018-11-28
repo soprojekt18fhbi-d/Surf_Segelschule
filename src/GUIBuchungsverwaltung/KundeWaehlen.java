@@ -1,4 +1,4 @@
-package GUI;
+package GUIBuchungsverwaltung;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -18,6 +18,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
+
+import GUI.MainFrame;
 
 public class KundeWaehlen extends JPanel {
 	

@@ -1,4 +1,4 @@
-package GUI;
+package GUIBuchungsverwaltung;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -15,14 +15,17 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+
+import GUI.MainFrame;
+
 import javax.swing.GroupLayout.Alignment;
 
-public class GerätAuswahlAusleihe extends JPanel {
+public class GerätAuswahlVerkauf extends JPanel {
 
 	/**
 	 * Create the panel.
 	 */
-	public GerätAuswahlAusleihe() {
+	public GerätAuswahlVerkauf() {
 		setLayout(new BorderLayout(0, 0));
 		JPanel panel = new JPanel();
 		add(panel, BorderLayout.NORTH);
@@ -53,16 +56,16 @@ public class GerätAuswahlAusleihe extends JPanel {
 		gbl_panel_1.rowWeights = new double[]{0.0, 1.0, Double.MIN_VALUE};
 		panel_1.setLayout(gbl_panel_1);
 		
-		JButton btnVerleihen = new JButton("Verleihen");
-		btnVerleihen.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		btnVerleihen.setPreferredSize(new Dimension(77, 100));
+		JButton btnVerkaufen = new JButton("Verkaufen");
+		btnVerkaufen.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		btnVerkaufen.setPreferredSize(new Dimension(77, 100));
 		GridBagConstraints gbc_btnVerleihen = new GridBagConstraints();
 		gbc_btnVerleihen.gridwidth = 2;
 		gbc_btnVerleihen.insets = new Insets(0, 0, 5, 0);
 		gbc_btnVerleihen.fill = GridBagConstraints.HORIZONTAL;
 		gbc_btnVerleihen.gridx = 0;
 		gbc_btnVerleihen.gridy = 0;
-		panel_1.add(btnVerleihen, gbc_btnVerleihen);
+		panel_1.add(btnVerkaufen, gbc_btnVerleihen);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		GridBagConstraints gbc_scrollPane = new GridBagConstraints();
@@ -84,15 +87,13 @@ public class GerätAuswahlAusleihe extends JPanel {
 		//Funktionen der Button
 		btnZurck.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MainFrame.change(MainFrame.getGerätAuswahlAusleihe(), MainFrame.getModellAuswahl());
-				
+				MainFrame.change(MainFrame.getGerätAuswahlVerkauf(), MainFrame.getModellAuswahl());
 			}
 		});
 		
-		btnVerleihen.addActionListener(new ActionListener() {
+		btnVerkaufen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MainFrame.change(MainFrame.getGerätAuswahlAusleihe(), MainFrame.getVerleihFormular());
-				
+				MainFrame.change(MainFrame.getGerätAuswahlVerkauf(), MainFrame.getVerkaufFormular());
 			}
 		});
 		

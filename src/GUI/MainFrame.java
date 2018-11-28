@@ -6,6 +6,21 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import GUIBuchungsverwaltung.AbgeschlosseneBuchungen;
+import GUIBuchungsverwaltung.AktiveAusleihen;
+import GUIBuchungsverwaltung.BuchungsTypAuswahl;
+import GUIBuchungsverwaltung.Buchungsverwaltung;
+import GUIBuchungsverwaltung.GerätAuswahlAusleihe;
+import GUIBuchungsverwaltung.GerätAuswahlVerkauf;
+import GUIBuchungsverwaltung.KundeWaehlen;
+import GUIBuchungsverwaltung.ModellAuswahl;
+import GUIBuchungsverwaltung.Reklamation;
+import GUIBuchungsverwaltung.StatusSetzen;
+import GUIBuchungsverwaltung.TypAuswahl;
+import GUIBuchungsverwaltung.VerkaufFormular;
+import GUIBuchungsverwaltung.VerleihFormular;
+
 import java.awt.CardLayout;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -45,7 +60,13 @@ public class MainFrame extends JFrame {
 	private static TypAuswahl typAuswahl = new TypAuswahl();
 	private static ModellAuswahl modellAuswahl = new ModellAuswahl();
 	private static GerätAuswahlAusleihe gerätAuswahlAusleihe = new GerätAuswahlAusleihe();
+	private static GerätAuswahlVerkauf gerätAuswahlVerkauf = new GerätAuswahlVerkauf();
 	private static VerleihFormular verleihFormular = new VerleihFormular();
+	private static VerkaufFormular verkaufFormular = new VerkaufFormular();
+	private static AbgeschlosseneBuchungen abgeschlosseneBuchungen = new AbgeschlosseneBuchungen();
+	private static AktiveAusleihen aktiveAusleihen = new AktiveAusleihen();
+	private static Reklamation reklamation = new Reklamation();
+	private static StatusSetzen statusSetzen = new StatusSetzen();
 	
 	// Kundenverwaltung
 	private static KundenverwaltungGUI kundenverwaltung = new KundenverwaltungGUI(); 
@@ -104,7 +125,13 @@ public class MainFrame extends JFrame {
 		contentPane.add(typAuswahl);
 		contentPane.add(modellAuswahl);
 		contentPane.add(gerätAuswahlAusleihe);
+		contentPane.add(gerätAuswahlVerkauf);
 		contentPane.add(verleihFormular);
+		contentPane.add(verkaufFormular);
+		contentPane.add(abgeschlosseneBuchungen);
+		contentPane.add(aktiveAusleihen);
+		contentPane.add(reklamation);
+		contentPane.add(statusSetzen);
 		contentPane.add(kundenverwaltung);
 		contentPane.add(kundeAendern);
 		contentPane.add(wirtschaftlichkeitGesamt);
@@ -242,8 +269,32 @@ public class MainFrame extends JFrame {
 		return gerätAuswahlAusleihe;
 	}
 	
+	public static JPanel getGerätAuswahlVerkauf(){ 		
+		return gerätAuswahlVerkauf;
+	}
+	
+	public static JPanel getAbgeschlosseneBuchungen(){ 		
+		return abgeschlosseneBuchungen;
+	}
+	
+	public static JPanel getAktiveAusleihen(){ 		
+		return aktiveAusleihen;
+	}
+	
+	public static JPanel getReklamation(){ 		
+		return reklamation;
+	}
+	
+	public static JPanel getStatusSetzen(){ 		
+		return statusSetzen;
+	}
+		
 	public static JPanel getVerleihFormular(){ 		
 		return verleihFormular;
+	}
+	
+	public static JPanel getVerkaufFormular(){ 		
+		return verkaufFormular;
 	}
 
 	public static JPanel getKundenverwaltung() {

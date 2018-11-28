@@ -1,4 +1,4 @@
-package GUI;
+package GUIBuchungsverwaltung;
 
 import java.awt.BorderLayout;
 import java.awt.Font;
@@ -15,6 +15,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
+
+import GUI.MainFrame;
 
 public class VerleihFormular extends JPanel {
 
