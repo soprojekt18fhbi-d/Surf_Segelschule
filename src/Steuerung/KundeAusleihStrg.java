@@ -11,7 +11,8 @@ import Domaenklassen.Kunde;
 public class KundeAusleihStrg {
 
 	private static KundeAusleihStrg instance;
-	private static KundeSuchenStrg kundensuche;
+	private static KundeSuchenStrg kundenSuche;
+	private static KundeAuswStrg kundenAuswahl;
 	private ArrayList <Kunde> kundenListe;
 	private Kunde suchKunde;
 	
@@ -25,6 +26,14 @@ public class KundeAusleihStrg {
 		return instance;	
 		}
 	
+	// Strg schlieﬂen
+	
+	static void closeKundeAusleihStrg() {
+		if (instance != null) {
+			instance = null;
+		}
+	}
+	
 	//Hauptmethode
 	
 	public Kunde getSuchKunde() {
@@ -36,17 +45,17 @@ public class KundeAusleihStrg {
 	
 	//Start der Datenbankabfrage mit einer ArrayList als Ergebnis
 	
-	public ArrayList getKundeSuchenStrg() {
-		KundeSuchenStrg kundenSuche = new KundeSuchenStrg();
+	private ArrayList getKundeSuchenStrg() {
+		kundenSuche = new KundeSuchenStrg();
 		kundenListe = KundeSuchenStrg.sucheKunde();
 		return kundenListe;
 	}
 	
 	//Wahl eines Kunden aus der KundenListe
 	
-	public Kunde selectKunde(ArrayList kundenListe) {
-		KundeAuswStrg kundenSuche = new KundeAuswStrg();
-		KundeAuswStrg.sucheKunde();
+	private Kunde selectKunde(ArrayList kundenListe) {
+		kundenAuswahl = new KundeAuswStrg();
+		suchKunde = KundeAuswStrg.auswKunde(kundenListe);
 		return suchKunde;
 	}
 	

@@ -11,4 +11,9 @@ public class KundeSuchenStrg {
 		return null;
 	}
 
+	public static KundeSuchenStrg getSuchenStrg() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
