@@ -2,16 +2,14 @@ package Steuerung;
 
 import java.util.ArrayList;
 
-import Domaenklassen.Kunde;
+public class GeraetSucheStrg {
 
-public class KundeSuchenStrg {
-
-	public static ArrayList<Kunde> sucheKunde() {
+	public ArrayList<Geraet> sucheGeraet() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public static KundeSuchenStrg getSuchenStrg() {
+	public static GeraetSucheStrg getGeraetSucheStrg() {
 		// TODO Auto-generated method stub
 		return null;
 	}

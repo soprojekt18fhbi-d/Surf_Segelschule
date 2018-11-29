@@ -8,20 +8,21 @@ import java.util.ArrayList;
 
 import Domaenklassen.Kunde;
 
-public class KundeAusleihStrg {
+public class KundeBuchungStrg {
 
-	private static KundeAusleihStrg instance;
-	private static KundeSuchenStrg kundenSuche;
+	private static KundeBuchungStrg instance;
+	private static KundeSucheStrg kundenSuche;
 	private static KundeAuswStrg kundenAuswahl;
 	private ArrayList <Kunde> kundenListe;
 	private Kunde suchKunde;
+
 	
 	
 	//Strg erstellen
 	
-	static KundeAusleihStrg getKundeAusleihStrg() {
+	static KundeBuchungStrg getKundeAusleihStrg() {
 		if (instance == null) {
-			instance = new KundeAusleihStrg();
+			instance = new KundeBuchungStrg();
 		}
 		return instance;	
 		}
@@ -33,23 +34,18 @@ public class KundeAusleihStrg {
 			instance = null;
 		}
 	}
-	
-	//Hauptmethode
-	
-	public Kunde getSuchKunde() {
-		kundenListe=getKundeSuchenStrg();
-		suchKunde=selectKunde(kundenListe);
-		return suchKunde;
-	}
+
 		 
 	
 	//Start der Datenbankabfrage mit einer ArrayList als Ergebnis
 	
-	private ArrayList getKundeSuchenStrg() {
-		kundenSuche = new KundeSuchenStrg();
-		kundenListe = KundeSuchenStrg.sucheKunde();
+	private ArrayList getKundeSuchenStrg(String suchKundennummer, String nname, String vname) {
+		kundenSuche = new KundeSucheStrg();
+		kundenListe = KundeSucheStrg.sucheKunde(suchKundennummer, nname, vname);
 		return kundenListe;
 	}
+	
+	
 	
 	//Wahl eines Kunden aus der KundenListe
 	
@@ -58,7 +54,7 @@ public class KundeAusleihStrg {
 		suchKunde = KundeAuswStrg.auswKunde(kundenListe);
 		return suchKunde;
 	}
-	
+	 
 	 
 	
 }
