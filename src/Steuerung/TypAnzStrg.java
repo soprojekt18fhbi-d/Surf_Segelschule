@@ -1,10 +1,13 @@
 package Steuerung;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 
-public class Testanbindung{
-	
+public class TypAnzStrg {
 	public static void main(String[] a)
 	
             throws Exception {
@@ -16,30 +19,30 @@ public class Testanbindung{
         conn.close();
     }
 
-
-
-public static void viewTable(Connection con)
+	public static String viewTable(Connection con)
 	    throws SQLException {
-
+		
 	    Statement stmt = null;
-	    String query = "select * from KUNDE";
+	    String query = "select * from TYP";
 	    try {
 	        stmt = con.createStatement();
 	        ResultSet rs = stmt.executeQuery(query);
 	        while (rs.next()) {
 	        	
-	        	String vorname = rs.getString("VORNAME");
-	            String nachname = rs.getString("NACHNAME");
-	            String email = rs.getString("EMAIL");
-	            String eintrittsdatum = rs.getString("EINTRITTSDATUM");
-	            
-	            
-	            System.out.println(vorname + " " + nachname + " hat die E-Mail " + email + " und ist bei uns seit dem " + eintrittsdatum);
+	        	String id = rs.getString(1);
+	        	String name = rs.getString(2);
+	        	String ausgabe = id+", "+name;
+	        	
+	        	
+	        	return ausgabe;
 	        }
+	       
 	    } catch (SQLException e ) {
 	    	e.printStackTrace();
 	    } finally {
 	        if (stmt != null) { stmt.close(); }
 	    }
+	    return query;
 	}
 }
+

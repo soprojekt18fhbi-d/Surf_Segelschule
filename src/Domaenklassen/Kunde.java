@@ -1,5 +1,7 @@
 package Domaenklassen;
 
+import Steuerung.Fuehrerschein;
+
 public class Kunde {
 
 	private int lastKundennummer = 10000;
@@ -82,6 +84,10 @@ public class Kunde {
 	@Override
 	public String toString(){
 		return this.kundennummer + ";" + this.name + ";" + this.vorname + ";" + this.segelschein + ";" + this.surfschein + ";" + this.motorbootschein + ";"+  this.heimadresse.toString(); 
+	}
+	public Fuehrerschein getFuehrerschein() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

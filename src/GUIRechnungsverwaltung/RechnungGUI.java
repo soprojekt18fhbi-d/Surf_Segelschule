@@ -241,28 +241,36 @@ public class RechnungGUI extends JFrame{
 			gbc_lblGetPreis.gridy = 5;
 			panel_1.add(lblGetPreis, gbc_lblGetPreis);
 			
+		/**
+		 * Ab hier muss noch angepasst werden. Line 6 wird zur Zeit noch ohne ersichtlichen Grund ausgeblendet.
+		 */
+			
 			
 			//Line 6
+		
+
+
 			
-			JLabel lblGetemail = new JLabel("getEmail");
-			lblGetemail.setFont(new Font("Tahoma", Font.PLAIN, 15));
-			GridBagConstraints gbc_lblGetemail = new GridBagConstraints();
-			gbc_lblGetemail.anchor = GridBagConstraints.WEST;
-			gbc_lblGetemail.insets = new Insets(0, 0, 5, 5);
-			gbc_lblGetemail.gridx = 1;
-			gbc_lblGetemail.gridy = 6;
-			panel_1.add(lblGetemail, gbc_lblGetemail);
+			JLabel lblBetrag = new JLabel("getBezeichnung");
+			lblBetrag.setFont(new Font("Tahoma", Font.PLAIN, 15));
+			GridBagConstraints gbc_lblBetrag = new GridBagConstraints();
+			gbc_lblBetrag.anchor = GridBagConstraints.WEST;
+			gbc_lblBetrag.insets = new Insets(0, 0, 5, 5);
+			gbc_lblBetrag.gridx = 2;
+			gbc_lblBetrag.gridy = 6;
+			panel_1.add(lblBetrag, gbc_lblBetrag);
 			
-			//Line 7
 			
-			JLabel lblTest = new JLabel("getEmail");
-			lblGetemail.setFont(new Font("Tahoma", Font.PLAIN, 15));
-			GridBagConstraints gbc_lblTest = new GridBagConstraints();
-			gbc_lblTest.anchor = GridBagConstraints.WEST;
-			gbc_lblTest.insets = new Insets(0, 0, 5, 5);
-			gbc_lblTest.gridx = 1;
-			gbc_lblTest.gridy = 7;
-			panel_1.add(lblTest, gbc_lblTest);
+			
+			JLabel lblGetBetrag = new JLabel("getPreis");
+			lblGetBetrag.setFont(new Font("Tahoma", Font.PLAIN, 15));
+			GridBagConstraints gbc_lblGetBetrag = new GridBagConstraints();
+			gbc_lblGetBetrag.anchor = GridBagConstraints.WEST;
+			gbc_lblGetBetrag.insets = new Insets(0, 0, 5, 0);
+			gbc_lblGetBetrag.gridx = 3;
+			gbc_lblGetBetrag.gridy = 6;
+			panel_1.add(lblGetBetrag, gbc_lblGetBetrag);
+			
 			
 			//Line 8
 			
@@ -327,25 +335,9 @@ public class RechnungGUI extends JFrame{
 			gbc_lblGetende.gridx = 3;
 			gbc_lblGetende.gridy = 10;
 			panel_1.add(lblGetende, gbc_lblGetende);
+
 			
-			//Line 11
-			
-			JLabel lblVrsKosten = new JLabel("vrs. Kosten:");
-			lblVrsKosten.setFont(new Font("Tahoma", Font.PLAIN, 15));
-			GridBagConstraints gbc_lblVrsKosten = new GridBagConstraints();
-			gbc_lblVrsKosten.anchor = GridBagConstraints.WEST;
-			gbc_lblVrsKosten.insets = new Insets(0, 0, 0, 5);
-			gbc_lblVrsKosten.gridx = 1;
-			gbc_lblVrsKosten.gridy = 11;
-			panel_1.add(lblVrsKosten, gbc_lblVrsKosten);
-			
-			JLabel lblGetpreis = new JLabel("getPreis");
-			lblGetpreis.setFont(new Font("Tahoma", Font.BOLD, 15));
-			GridBagConstraints gbc_lblGetpreis = new GridBagConstraints();
-			gbc_lblGetpreis.anchor = GridBagConstraints.WEST;
-			gbc_lblGetpreis.gridx = 3;
-			gbc_lblGetpreis.gridy = 11;
-			panel_1.add(lblGetpreis, gbc_lblGetpreis);
+
 			
 			
 			//South-Panel
