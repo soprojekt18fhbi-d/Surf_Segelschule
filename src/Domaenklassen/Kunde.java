@@ -11,18 +11,18 @@ public class Kunde {
 	private boolean surfschein;
 	private boolean segelschein;
 	private boolean motorbootschein;
-	private int geburtsdatum;
+	private String email;
 	
 	
-	public Kunde(String name, String vorname, Adresse adresse, Boolean surfschein, Boolean segelschein, Boolean motorbootschein, int geburtsdatum) {
-		this.kundennummer = ++lastKundennummer;
+	public Kunde(String name, String vorname, Adresse adresse, Boolean surfschein, Boolean segelschein, Boolean motorbootschein, int kundennummer, String email) {
+		this.kundennummer = kundennummer;
 		this.name = name;
 		this.vorname = vorname;
 		this.adresse = adresse;
 		this.surfschein = surfschein;
 		this.segelschein = segelschein;
 		this.motorbootschein = motorbootschein;
-		this.geburtsdatum = geburtsdatum;
+		this.setEmail(email);
 	}
 	public String getName() {
 		return name;
@@ -71,12 +71,7 @@ public class Kunde {
 	public void setMotorbootschein(boolean motorbootschein) {
 		this.motorbootschein = motorbootschein;
 	}
-	public int getGeburtsdatum() {
-		return geburtsdatum;
-	}
-	public void setGeburtsdatum(int geburtsdatum) {
-		this.geburtsdatum = geburtsdatum;
-	}
+
 	public void drucken(){
 		System.out.println("\n" + this.kundennummer + ": " + this.name + ", " + this.vorname) ;
 		this.adresse.drucken();
@@ -85,6 +80,12 @@ public class Kunde {
 	@Override
 	public String toString(){
 		return this.kundennummer + ";" + this.name + ";" + this.vorname + ";" + this.adresse.toString(); 
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 }

@@ -2,6 +2,9 @@ package GUI;
 
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import DataModelKlassen.IModel;
+
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
@@ -13,7 +16,7 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class Geraetaendern extends JPanel {
+public class Geraetaendern extends JPanel implements IView {
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
@@ -197,6 +200,21 @@ public class Geraetaendern extends JPanel {
 		);
 		panel.setLayout(gl_panel);
 
+	}
+
+	
+
+	@Override
+	public void aktualisieren(IModel model) {
+		/**
+		 * @author Benkr
+		 * 
+		 * 
+		 */
+		
+		
+		
+		
 	}
 
 }
