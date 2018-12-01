@@ -75,7 +75,7 @@ public class MainFrame extends JFrame {
 	// Wirtschaftlichkeitsrechnung
 	private static WirtschaftlichkeitsverwaltungGUI wirtschaftlichkeitsverwaltung = new WirtschaftlichkeitsverwaltungGUI();
 	private static WirtschaftlichkeitEinzelnGUI wirtschaftlichkeitEinzeln = new WirtschaftlichkeitEinzelnGUI();
-	private static WirtschaftlichkeitEinzelnGUI wirtschaftlichkeitGesamt = new WirtschaftlichkeitEinzelnGUI();
+	private static WirtschaftlichkeitGesamtGUI wirtschaftlichkeitGesamt = new WirtschaftlichkeitGesamtGUI();
 
 	/**
 	 * Launch the application.

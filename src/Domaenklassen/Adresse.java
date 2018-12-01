@@ -4,13 +4,15 @@ public class Adresse {
 	private String strasse;
 	private String ort;
 	private int plz;
-	private int hausnummer;
+	private String hausnummer;
+	private String email;
 
-	public Adresse(String strasse, int hausnummer, String ort, int plz) {
+	public Adresse(String strasse, String hausnummer, String ort, int plz, String email) {
 		this.strasse = strasse;
 		this.hausnummer = hausnummer;
 		this.ort = ort;
 		this.plz = plz;
+		this.email = email;
 	}
 
 	public String getStrasse() {
@@ -37,14 +39,22 @@ public class Adresse {
 		this.plz = plz;
 	}
 
-	public int getHausnummer() {
+	public String getHausnummer() {
 		return this.hausnummer;
 	}
 
-	public void setHausnummer(int hausnummer) {
+	public void setHausnummer(String hausnummer) {
 		this.hausnummer = hausnummer;
 	}
 	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	public void drucken(){
 		System.out.println(this.strasse + " " + this.hausnummer + " in " + this.plz + " " + this.ort);
 	}

@@ -6,7 +6,11 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
+import javax.swing.DefaultListModel;
 import javax.swing.GroupLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -18,6 +22,7 @@ import javax.swing.JTextField;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
 import GUI.MainFrame;
+import Steuerung.TypAnzStrg;
 
 import java.awt.Insets;
 
@@ -80,8 +85,21 @@ public class TypAuswahl extends JPanel {
 		gbc_scrollPane.gridy = 0;
 		panel_1.add(scrollPane, gbc_scrollPane);
 		
-		JList list = new JList();
+		DefaultListModel DLM = new DefaultListModel();
+		JList list = new JList(DLM);
+		list.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		scrollPane.setViewportView(list);
+		
+		
+		//Befüllen der JList mit Daten der Datenbank
+		Connection conn;
+		try {
+			conn = DriverManager.getConnection("jdbc:h2:tcp://localhost/~/test", "sa", "sa");
+			DLM.addElement(TypAnzStrg.viewTable(conn));
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+	        
 		
 		JLabel lblGertetypen = new JLabel("Ger\u00E4tetypen:");
 		lblGertetypen.setFont(new Font("Tahoma", Font.BOLD, 15));
