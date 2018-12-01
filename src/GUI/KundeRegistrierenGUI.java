@@ -6,6 +6,10 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Domaenklassen.Adresse;
+import Steuerung.KundeAnlegenSteuerung;
+
 import javax.swing.JButton;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -79,7 +83,8 @@ public class KundeRegistrierenGUI extends JFrame {
 		JButton btnHauptmenue = new JButton("Hauptmenü");
 		btnHauptmenue.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			//frame.dispose();	
+			dispose();	
+			MainFrame.change(MainFrame.getKundenverwaltung(), MainFrame.getHauptmenue());
 			}
 		});	
 		
@@ -127,28 +132,7 @@ public class KundeRegistrierenGUI extends JFrame {
 		});
 		
 		
-		JButton btnHinzufuegen = new JButton("Hinzuf\u00FCgen");
-		panel_1.add(btnHinzufuegen);
-//		btnHinzufuegen.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent arg0) {
-//				String nachname = textField.getText();
-//				String vorname = textField_1.getText();
-//				int geburtsdatum = Integer.parseInt(textField_2.getText());
-//				Boolean surfschein = chckbxSurfschein.isSelected();
-//				Boolean segelschein = chckbxSegelschein.isSelected();
-//				Boolean motorboot = checkbxMotorboot.isSelected();
-//				
-//				int plz = Integer.parseInt(textField_3.getText());
-//				String ort = textField_4.getText();
-//				String strasse = textField_5.getText();
-//				int hausnummer	= Integer.parseInt(textField_6.getText());
-//				int plz2 = Integer.parseInt(textField_7.getText());
-//				String ort2 = textField_8.getText();
-//				String strasse2 = textField_9.getText();
-//				int hausnummer2 = Integer.parseInt(textField_10.getText());
-//				String email = textField_10.getText();
-//			}
-//		});
+		
 		
 	
 		JPanel panel_2 = new JPanel();
@@ -349,7 +333,7 @@ public class KundeRegistrierenGUI extends JFrame {
 		panel_2.add(textField_8, gbc_textField_8);
 		textField_8.setColumns(10);
 		
-		JLabel lblStrasse2 = new JLabel("Strae");
+		JLabel lblStrasse2 = new JLabel("Straße");
 		GridBagConstraints gbc_lblStrasse2 = new GridBagConstraints();
 		gbc_lblStrasse2.anchor = GridBagConstraints.WEST;
 		gbc_lblStrasse2.insets = new Insets(0, 0, 5, 5);
@@ -419,5 +403,41 @@ public class KundeRegistrierenGUI extends JFrame {
 		gbc_chckbxMotorbootschein.gridx = 3;
 		gbc_chckbxMotorbootschein.gridy = 18;
 		panel_2.add(chckbxMotorbootschein, gbc_chckbxMotorbootschein);
+		
+		JButton btnHinzufuegen = new JButton("Hinzuf\u00FCgen");
+		panel_1.add(btnHinzufuegen);
+		btnHinzufuegen.addActionListener(new ActionListener() {			
+			public void actionPerformed(ActionEvent arg0) {
+				
+			
+				int plz = Integer.parseInt(textField_3.getText());
+				String ort = textField_4.getText();
+				String strasse = textField_5.getText();
+				String hausnummer = textField_6.getText();
+				Adresse heimadresse = new Adresse(strasse, hausnummer, ort, plz, "" );
+				//KundeAnlegenSteuerung.AdresseAnlegen(strasse, hausnummer, ort, plz, "" );
+				
+				
+				int plz2 = Integer.parseInt(textField_7.getText());
+				String ort2 = textField_8.getText();
+				String strasse2 = textField_9.getText();
+				String hausnummer2 = textField_10.getText();
+				String email = textField_10.getText();
+				Adresse urlaubsadresse = new Adresse(strasse2, hausnummer2, ort2, plz2, email);
+				//KundeAnlegenSteuerung.AdresseAnlegen(strasse2, hausnummer2, ort2, plz2, email);
+						
+				String nachname = textField.getText();
+				String vorname = textField_1.getText();
+				int geburtsdatum = Integer.parseInt(textField_2.getText());
+				Boolean surfschein = chckbxSurfschein.isSelected();
+				Boolean segelschein = chckbxSegelschein.isSelected();;
+				Boolean motorbootschein = chckbxMotorbootschein.isSelected();;
+				KundeAnlegenSteuerung.KundeAnlegen(nachname, vorname, heimadresse, urlaubsadresse, surfschein, segelschein, motorbootschein, geburtsdatum);
+				
+				
+				dispose();	
+				MainFrame.change(MainFrame.getKundenverwaltung(), MainFrame.getHauptmenue());	
+			}
+		});
 	}
 }

@@ -7,22 +7,28 @@ public class Kunde {
 	private int kundennummer;
 	private String name;
 	private String vorname;
-	private Adresse adresse;
+	private Adresse heimadresse;
+	private Adresse urlaubsadresse;
 	private boolean surfschein;
 	private boolean segelschein;
 	private boolean motorbootschein;
 	private int geburtsdatum;
+	private boolean bestandskunde;
 	
 	
-	public Kunde(String name, String vorname, Adresse adresse, Boolean surfschein, Boolean segelschein, Boolean motorbootschein, int geburtsdatum) {
+	public Kunde(String name, String vorname, Adresse heimadresse, Adresse urlaubsadresse, Boolean surfschein, Boolean segelschein, Boolean motorbootschein, int geburtsdatum) {
 		this.kundennummer = ++lastKundennummer;
+		
 		this.name = name;
 		this.vorname = vorname;
-		this.adresse = adresse;
+		this.heimadresse = heimadresse;
+		this.urlaubsadresse = urlaubsadresse;
 		this.surfschein = surfschein;
 		this.segelschein = segelschein;
 		this.motorbootschein = motorbootschein;
 		this.geburtsdatum = geburtsdatum;
+		this.bestandskunde = false;
+		
 	}
 	public String getName() {
 		return name;
@@ -39,15 +45,6 @@ public class Kunde {
 	public void setVorname(String vorname) {
 		this.vorname = vorname;
 	}
-
-	public Adresse getAdresse() {
-		return adresse;
-	}
-
-	public void setAdresse(Adresse adresse) {
-		this.adresse = adresse;
-	}
-
 
 	public int getKundennummer() {
 		return kundennummer;
@@ -79,12 +76,12 @@ public class Kunde {
 	}
 	public void drucken(){
 		System.out.println("\n" + this.kundennummer + ": " + this.name + ", " + this.vorname) ;
-		this.adresse.drucken();
+		this.heimadresse.drucken();
 	}
 	
 	@Override
 	public String toString(){
-		return this.kundennummer + ";" + this.name + ";" + this.vorname + ";" + this.adresse.toString(); 
+		return this.kundennummer + ";" + this.name + ";" + this.vorname + ";" + this.segelschein + ";" + this.surfschein + ";" + this.motorbootschein + ";"+  this.heimadresse.toString(); 
 	}
 
 }
